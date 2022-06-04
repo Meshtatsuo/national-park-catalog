@@ -10,10 +10,11 @@ import About from "./pages/About";
 //import components
 import Header from "./components/Header";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-green-900 w-full m-auto">
+    <div className="w-full m-auto bg-green-900">
       <Router>
         <div className="container m-auto">
           <Header />
@@ -24,6 +25,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/view/:id" element={<SingleView />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
     </div>

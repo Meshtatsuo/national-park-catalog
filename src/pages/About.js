@@ -5,7 +5,11 @@ function About() {
 
   return (
     <>
-      <p>About Page</p>
+      <div className="bg-neutral-200 h-screen">
+        <div class="w-10/12 m-auto py-20">
+          <h1 className="font-bold text-4xl">About</h1>
+        </div>
+      </div>
     </>
   );
 }
