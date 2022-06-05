@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Jumbo from "../../assets/acadiatest.jpg";
 
-function ParkCard() {
-  //stuff
+function ParkCard(park) {
+  const { id, name, designation, state, image, address } = park;
 
   return (
     <>
       <div className="max-w-sm m-5 bg-slate-100 p-1">
-        <img src={Jumbo} alt="image" />
+        <img src={image} alt="image" />
         <div className="p-3">
-          <h2 className="text-2xl m-1 font-bold">Acadia National Park</h2>
-          <h3 className="m-1">Bar Harbor, ME</h3>
+          <h2 className="text-2xl m-1 font-bold">{name}</h2>
+          <h3 className="m-1">{address}</h3>
           <div className="flex flex-wrap my-3" id="park-tags">
             <h4 className="flex-0 px-2 m-1 text-xs font-bold bg-blue-400 rounded-lg">
               Water Tag
@@ -25,13 +25,6 @@ function ParkCard() {
             <h4 className="flex-0 px-2 m-1 text-xs font-bold bg-orange-300 rounded-lg">
               Park Tag
             </h4>
-          </div>
-
-          <div id="description" className="p-2 my-2">
-            <p>
-              This is where the description of the park would go. condensed if
-              need be idk what i'll do to implement this quite yet.
-            </p>
           </div>
 
           <div id="link-to-single">

@@ -1,22 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import ParkCard from "../components/ParkCard";
 
 function Browse() {
-  //stuff
+  const [parks, setParks] = useState(0);
+  const retrieveProducts = async () => {
+    const response = await axios.get("/api/parks");
+    if (!response) {
+      return false;
+    }
+    setParks(response.data);
+  };
+
+  useEffect(() => {
+    if (parks) {
+      console.log(parks);
+    }
+  }, [parks]);
+
+  retrieveProducts();
 
   return (
     <>
       <div className="bg-neutral-200">
-        <div class="w-10/12 m-auto py-20">
+        <div className="w-10/12 m-auto py-20">
           <h1 className="font-bold text-4xl m-1">Browse</h1>
 
           <div className="my-10 flex flex-wrap">
-            <ParkCard />
-            <ParkCard />
-            <ParkCard />
-            <ParkCard />
+            {parks?.length ? (
+              parks.map((park) => (
+                <ParkCard
+                  id={park.id}
+                  name={park.National_Park_Site}
+                  designation={park.Designation}
+                  state={park.State}
+                  image={park.Park_Image}
+                  address={park.Address}
+                />
+              ))
+            ) : (
+              <h1>Loading. . .</h1>
+            )}
           </div>
         </div>
       </div>
