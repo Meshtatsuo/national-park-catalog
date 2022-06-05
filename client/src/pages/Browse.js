@@ -26,7 +26,7 @@ function Browse() {
 
   return (
     <>
-      <div className="bg-neutral-200">
+      <div className="bg-neutral-200 min-h-screen">
         <div className="w-10/12 m-auto py-20">
           <h1 className="font-bold text-4xl m-1">Browse</h1>
 

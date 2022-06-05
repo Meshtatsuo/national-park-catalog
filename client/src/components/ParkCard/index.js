@@ -9,7 +9,7 @@ function ParkCard(park) {
   return (
     <>
       <div className="max-w-sm m-5 bg-slate-100 p-1">
-        <img className="m-auto" src={image} alt="image" />
+        <img className="m-auto" src={image} alt="thumbnail" />
         <div className="p-3">
           <h2 className="text-2xl m-1 font-bold">{name}</h2>
           <h3 className="m-1">{address}</h3>
