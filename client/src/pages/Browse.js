@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import LoadingGif from "../assets/walking.gif";
 
 import ParkCard from "../components/ParkCard";
 
@@ -45,7 +46,10 @@ function Browse() {
                 />
               ))
             ) : (
-              <h1>Loading. . .</h1>
+              <div className="mx-auto my-5">
+                <img src={LoadingGif} alt="Walking loading" />
+                <h1 className="font-bold text-2xl">Loading. . .</h1>
+              </div>
             )}
           </div>
         </div>
