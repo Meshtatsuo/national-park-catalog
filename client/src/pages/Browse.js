@@ -5,18 +5,20 @@ import axios from "axios";
 import ParkCard from "../components/ParkCard";
 
 function Browse() {
-  const [parks, setParks] = useState(0);
+  const [parks, setParks] = useState([]);
   const retrieveProducts = async () => {
-    const response = await axios.get("/api/parks");
-    if (!response) {
-      return false;
+    if (parks.length === 0) {
+      const response = await axios.get("/api/parks");
+      if (!response) {
+        return false;
+      }
+      setParks(response.data);
     }
-    setParks(response.data);
   };
 
   useEffect(() => {
     if (parks) {
-      console.log(parks);
+      //
     }
   }, [parks]);
 
@@ -38,6 +40,8 @@ function Browse() {
                   state={park.State}
                   image={park.Park_Image}
                   address={park.Address}
+                  jr={park.Jr_Ranger_Program}
+                  activities={park.Activities}
                 />
               ))
             ) : (
