@@ -26,12 +26,12 @@ async function getParkById(id) {
     id: [id],
   });
 
-  if (!data) {
+  if (!data || data.length === 0) {
     console.log("No data found");
     return false;
   }
-
   console.log(data);
+  return data;
 }
 
 async function getAllParks() {
@@ -55,8 +55,8 @@ async function getParksByState(state) {
   const newData = data.filter((item) => {
     return item.State.includes(state);
   });
-
   console.log(newData);
+  return newData;
 }
 
 async function getParksWithJrRanger() {
@@ -69,7 +69,7 @@ async function getParksWithJrRanger() {
     return false;
   }
 
-  console.log(data);
+  return data;
 }
 
 module.exports = {
