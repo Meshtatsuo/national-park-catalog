@@ -5,7 +5,7 @@ import ActivityTag from "../ActivityTag";
 
 function ParkCard(park) {
   const { id, name, designation, state, image, address, jr, activities } = park;
-
+  const link = `/view/${id}`;
   return (
     <>
       <div className="max-w-sm m-5 bg-slate-100 p-1">
@@ -26,7 +26,7 @@ function ParkCard(park) {
           </div>
 
           <div id="link-to-single">
-            <Link to="/view/1">
+            <Link to={link}>
               <h2 className="text-lg font-bold text-right">View Details...</h2>
             </Link>
           </div>
