@@ -23,12 +23,6 @@ function Nav() {
           >
             <li>Browse</li>
           </Link>
-          <Link
-            to="/about"
-            className="flex-1 py-5 px-8 font-bold text-black hover:text-slate text-xl hover:bg-neutral-300"
-          >
-            <li>About</li>
-          </Link>
         </ul>
       </div>
     </div>

@@ -32,11 +32,13 @@ function SingleView() {
     <>
       {park ? (
         <div className="min-h-screen bg-neutral-200">
-          <h2 className="text-2xl p-5">{park.National_Park_Site}</h2>
-          <h2 className="text-md px-5">{park.Address}</h2>
+          <h2 className="text-2xl px-10 py-5 font-bold text-4xl">
+            {park.National_Park_Site}
+          </h2>
+          <h2 className="text-md px-10">{park.Address}</h2>
           <div className="sm:columns-1 md:columns-2 mx-auto">
             <img
-              className="flex-1 m-auto p-5"
+              className="flex-1 m-auto py-5 "
               src={park.Park_Image}
               alt="park"
             />
