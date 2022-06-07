@@ -27,10 +27,16 @@ function Browse() {
 
   return (
     <>
-      <div className="bg-neutral-200 min-h-screen">
+      <div className="bg-neutral-200 min-h-screen ">
         <div className="w-10/12 m-auto py-20">
           <h1 className="font-bold text-4xl m-1">Browse</h1>
-
+          <div id="filters">
+            <select
+              name="States"
+              id="state-dropdown"
+              className="py-1 px-3 bg-white rounded text-xl"
+            ></select>
+          </div>
           <div className="my-10 flex flex-wrap">
             {parks?.length ? (
               parks.map((park) => (

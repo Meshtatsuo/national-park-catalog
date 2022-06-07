@@ -38,7 +38,7 @@ function SingleView() {
           <h2 className="text-md px-10">{park.Address}</h2>
           <div className="sm:columns-1 md:columns-2 mx-auto">
             <img
-              className="flex-1 m-auto py-5 "
+              className="flex-1 m-auto p-5 "
               src={park.Park_Image}
               alt="park"
             />
