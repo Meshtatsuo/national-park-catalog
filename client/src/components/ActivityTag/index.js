@@ -2,8 +2,10 @@ import React from "react";
 import { renderMatches } from "react-router";
 
 function ActivityTag(props) {
-  // return based on tag type
+  let tagColor;
   const { tag } = props;
+
+  // updated tag color based on tag type
   if (tag === "L" || tag === "Junior Ranger") {
     console.log(tag, " found its way here");
     return;
@@ -19,11 +21,7 @@ function ActivityTag(props) {
     tag === "Berry Picking" ||
     tag === "Flightseeing"
   ) {
-    return (
-      <h4 className="flex-0 py-1 px-2 m-1 text-xs font-bold bg-orange-300 rounded-3xl">
-        {tag}
-      </h4>
-    );
+    tagColor = "bg-orange-300";
   } else if (
     tag === "Pet Friendly" ||
     tag === "Horseback Riding" ||
@@ -31,22 +29,14 @@ function ActivityTag(props) {
     tag === "Bird and Wildlife Viewing" ||
     tag === "BARK Ranger"
   ) {
-    return (
-      <h4 className="flex-0 py-1 px-2 m-1 text-xs font-bold bg-yellow-600 rounded-3xl">
-        {tag}
-      </h4>
-    );
+    tagColor = "bg-yellow-600";
   } else if (
     tag === "Boating" ||
     tag === "Fishing" ||
     tag === "Canoeing/Kayaking" ||
     tag === "Rafting"
   ) {
-    return (
-      <h4 className="flex-0 py-1 px-2 m-1 text-xs font-bold bg-blue-400 rounded-3xl">
-        {tag}
-      </h4>
-    );
+    tagColor = "bg-blue-400";
   } else if (
     tag === "Snowmobiling" ||
     tag === "Cross-Country Skiing" ||
@@ -57,18 +47,15 @@ function ActivityTag(props) {
     tag === "Ski-joring" ||
     tag === "Mountaineering"
   ) {
-    return (
-      <h4 className="flex-0 py-1 px-2 m-1 text-xs font-bold bg-blue-200 rounded-3xl">
-        {tag}
-      </h4>
-    );
+    tagColor = "bg-blue-200";
   } else {
-    return (
-      <h4 className="flex-0 py-1 px-2 m-1 text-xs font-bold bg-green-600 rounded-3xl">
-        {tag}
-      </h4>
-    );
+    tagColor = "bg-green-600";
   }
+
+  let tagClasses =
+    "flex-0 py-1 px-2 m-1 text-xs font-bold rounded-3xl " + tagColor;
+
+  return <h4 className={tagClasses}>{tag}</h4>;
 }
 
 export default ActivityTag;
