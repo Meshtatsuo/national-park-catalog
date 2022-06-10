@@ -27,7 +27,9 @@ function ParkCard(park) {
 
           <div id="link-to-single">
             <Link to={link}>
-              <h2 className="text-lg font-bold text-right">View Details...</h2>
+              <h2 className="text-lg font-bold text-right hover:p-1">
+                View Details...
+              </h2>
             </Link>
           </div>
         </div>
