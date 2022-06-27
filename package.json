@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/Meshtatsuo/national-park-catalog#readme",
   "dependencies": {
-    "concurrently": "^7.2.1"
+    "@headlessui/react": "^1.6.5",
+    "@heroicons/react": "^1.0.6",
+    "concurrently": "^7.2.1",
+    "wikipedia": "^1.1.9"
   }
 }
