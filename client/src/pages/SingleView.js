@@ -58,20 +58,6 @@ function SingleView() {
       {park ? (
         <div className="min-h-screen bg-neutral-200">
           <div className="flex mx-auto">
-            <div className="flex-1">
-              <img
-                className="flex-1 m-auto p-5 "
-                src={park.Park_Image}
-                alt="park"
-              />
-              <div className="flex-0 mx-auto px-25 flex-wrap">
-                <div className="flex flex-wrap my-3 px-5">
-                  {park.Activities.map((activity) => (
-                    <ActivityTag tag={activity} />
-                  ))}
-                </div>
-              </div>
-            </div>
             <div className="flex-1 px-10 p-3">
               <h2 className="text-2xl my-5 font-bold text-4xl">
                 {park.National_Park_Site}
@@ -93,10 +79,22 @@ function SingleView() {
                 <p> Loading Info . . .</p>
               )}
             </div>
+            <div className="flex-1">
+              <img
+                className="flex-1 m-auto p-5 "
+                src={park.Park_Image}
+                alt="park"
+              />
+              <div className="flex-0 mx-auto px-25 flex-wrap">
+                <div className="flex flex-wrap my-3 px-5">
+                  {park.Activities.map((activity) => (
+                    <ActivityTag tag={activity} />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <div id="review-section" className="flex">
-            <StarRating />
-          </div>
+          <div id="review-section" className="flex"></div>
         </div>
       ) : (
         <div className="mx-auto my-5 min-h-screen bg-neutral-200">
