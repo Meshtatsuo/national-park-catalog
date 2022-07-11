@@ -7,7 +7,6 @@ function ActivityTag(props) {
 
   // updated tag color based on tag type
   if (tag === "L" || tag === "Junior Ranger") {
-    console.log(tag, " found its way here");
     return;
   } else if (
     tag === "Walking Tour" ||
