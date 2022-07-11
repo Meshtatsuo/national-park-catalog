@@ -97,9 +97,9 @@ function SingleView() {
           <div id="review-section" className="flex"></div>
         </div>
       ) : (
-        <div className="mx-auto my-5 min-h-screen bg-neutral-200">
+        <div className="mx-auto min-h-screen bg-neutral-200 p-10">
           <img className="m-auto" src={LoadingGif} alt="Walking loading" />
-          <h1 className="font-bold text-2xl">Loading. . .</h1>
+          <h1 className="font-bold text-2xl text-center">Loading. . .</h1>
         </div>
       )}
     </>
