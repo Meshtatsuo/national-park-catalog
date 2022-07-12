@@ -117,7 +117,7 @@ function Browse() {
               </select>
             </div>
 
-            {/* <p className="m-1col-span-2 text-center text-xl">
+            <p className="m-1col-span-2 text-center text-xl">
               Jr. Ranger Program
             </p>
             <div id="jr-ranger" className="text-center columns-2 px-10">
@@ -133,7 +133,7 @@ function Browse() {
                 </label>
                 <input type="radio" id="jr-ranger-true" name="has-jr-ranger" />
               </div>
-            </div> */}
+            </div>
           </div>
           <div className="my-10 flex flex-wrap">
             {parks?.length ? (

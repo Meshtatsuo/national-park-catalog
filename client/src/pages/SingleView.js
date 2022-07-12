@@ -76,7 +76,7 @@ function SingleView() {
                   </a>
                 </div>
               ) : (
-                <p> Loading Info . . .</p>
+                <p></p>
               )}
             </div>
             <div className="flex-1">

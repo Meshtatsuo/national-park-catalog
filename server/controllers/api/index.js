@@ -72,4 +72,19 @@ router.get("/park/:id", async (req, res) => {
   }
 });
 
+router.post("/parks/filter", async (req, res) => {
+  const { state, hasJr } = req.body;
+
+  if (hasJr === undefined || hasJr === NULL) {
+    if (state !== "") {
+      const response = await getParksByState(state);
+      if (!response) {
+        res.status(500).json({ error: "internal server error" });
+      } else {
+        res.send(response);
+      }
+    }
+  }
+});
+
 module.exports = router;
