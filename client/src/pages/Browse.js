@@ -149,14 +149,6 @@ function Browse() {
               </div>
             </div>
           </div>
-          <div className="flex">
-          <Pagination
-              className="pagination-bar"
-              currentPage = {currentPage}
-              totalCount={parks.length}
-              pageSize={pageSize}
-              onPageChange={page => setCurrentPage(page)}/>   
-              </div>
           <div className="my-10 flex flex-wrap">
             {currentParkData?.length ? (
               
