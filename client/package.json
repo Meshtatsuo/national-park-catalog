@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "classnames": "^2.3.1",
     "dotenv": "^16.0.1",
     "grist-api": "^0.1.7",
     "react": "^18.1.0",
@@ -15,6 +16,7 @@
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.54.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

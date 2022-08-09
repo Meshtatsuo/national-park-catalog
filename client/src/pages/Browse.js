@@ -1,13 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import LoadingGif from "../assets/walking.gif";
 
 import ParkCard from "../components/ParkCard";
+import Pagination from "../components/Pagination";
 
 function Browse() {
   const [parksLoaded, setLoaded] = useState(false);
   const [parks, setParks] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  let pageSize = 9;
+
+  const currentParkData = useMemo(() => {
+    const firstPageIndex = (currentPage -1) * pageSize;
+    const lastPageIndex = firstPageIndex + pageSize;
+    return parks.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, parks])
+
   const retrieveProducts = async () => {
     if (parksLoaded === false) {
       const response = await axios.get("/api/parks");
@@ -15,6 +26,7 @@ function Browse() {
         return false;
       }
       setParks(response.data);
+
     }
   };
   retrieveProducts();
@@ -22,6 +34,7 @@ function Browse() {
   useEffect(() => {
     if (parks) {
       setLoaded(true);
+
     }
   }, [parks]);
 
@@ -52,6 +65,7 @@ function Browse() {
       <div className="bg-neutral-200 min-h-screen ">
         <div className="w-10/12 m-auto py-20">
           <h1 className="font-bold text-4xl m-1">Browse</h1>
+          
           <div id="filters" className="columns-5">
             <div id="state-select" className="p-2">
               <select
@@ -135,9 +149,18 @@ function Browse() {
               </div>
             </div>
           </div>
+          <div className="flex">
+          <Pagination
+              className="pagination-bar"
+              currentPage = {currentPage}
+              totalCount={parks.length}
+              pageSize={pageSize}
+              onPageChange={page => setCurrentPage(page)}/>   
+              </div>
           <div className="my-10 flex flex-wrap">
-            {parks?.length ? (
-              parks.map((park) => (
+            {currentParkData?.length ? (
+              
+              currentParkData.map((park) => 
                 <ParkCard
                   id={park.id}
                   name={park.National_Park_Site}
@@ -148,7 +171,7 @@ function Browse() {
                   jr={park.Jr_Ranger_Program}
                   activities={park.Activities}
                 />
-              ))
+              )     
             ) : (
               <div className="mx-auto my-5">
                 <img src={LoadingGif} alt="Walking loading" />
@@ -156,6 +179,14 @@ function Browse() {
               </div>
             )}
           </div>
+            <div className="flex">
+          <Pagination
+              className="pagination-bar"
+              currentPage = {currentPage}
+              totalCount={parks.length}
+              pageSize={pageSize}
+              onPageChange={page => setCurrentPage(page)}/>   
+              </div>
         </div>
       </div>
     </>
